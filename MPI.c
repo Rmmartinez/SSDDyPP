@@ -3,6 +3,7 @@
 #include <sys/time.h>
 #include "arbol.h"
 #include <mpi.h>
+#include <stddef.h>
 
 //dimension de la matriz
 #define FILAS 50      //1500, 5000 y 7500 funciona hasta 6600
@@ -17,13 +18,13 @@ void mostrarColores(Celda c){
     if (c.estado == BLANCO){     //podado
         printf(" BLANCO ");
     }
-    if (c.estado == AZUL){   //enfermo con tratamiento antif˙ngico
+    if (c.estado == AZUL){   //enfermo con tratamiento antif√∫ngico
         printf(" AZUL ");
     }
-    if (c.estado == ROJO){   //enfermo con sÌntomas visibles
+    if (c.estado == ROJO){   //enfermo con s√≠ntomas visibles
         printf(" ROJO ");
     }
-    if (c.estado == NARANJA){    //infectado con esporas (Enfermo sin sÌntomas)
+    if (c.estado == NARANJA){    //infectado con esporas (Enfermo sin s√≠ntomas)
         printf(" NARANJA ");
     }
     if (c.estado == VERDE){      //sano
@@ -105,18 +106,18 @@ void initMatrix(int filas, int columnas, Celda *tablero){
             }
             else{
                 //color
-                if (random_colores < 65){   //65% de ·rboles sanos
+                if (random_colores < 65){   //65% de √°rboles sanos
                     color = VERDE;
                 }
-                if (random_colores >= 65 && random_colores < 70){   //5% de ·rboles con sÌntomas
+                if (random_colores >= 65 && random_colores < 70){   //5% de √°rboles con s√≠ntomas
                     color = ROJO;
                     init_timer = 4; //enfermo con sintomas en el tiempo 4
                 }
-                if (random_colores >= 70 && random_colores < 80){   //10% de ·rboles enfermos sin sÌntomas
+                if (random_colores >= 70 && random_colores < 80){   //10% de √°rboles enfermos sin s√≠ntomas
                     color = NARANJA;
                     init_timer = 1; //enfermo sin sintomas en el tiempo 1
                 }
-                if (random_colores >= 80 && random_colores <= 100){   //20% de ·rboles con tratamiento
+                if (random_colores >= 80 && random_colores <= 100){   //20% de √°rboles con tratamiento
                     color = AZUL;
                     init_timer = 5; //enfermo con tratamiento en el tiempo 5
                 }
@@ -190,20 +191,20 @@ void Calcular_Proximo_Estado(Celda *tablero, Celda *guardo_resultado, Celda c, C
         }
     }
     else if ((c).estado == NARANJA){
-        // Infectado con esporas -> Enfermo con sÌntomas
+        // Infectado con esporas -> Enfermo con s√≠ntomas
         if ((c).timer == 4){   //pasan 3 semanas del contagio
             c.estado = ROJO;
         }
     }
     else if ((c).estado == ROJO){
-        // Enfermo con sÌntomas -> Enfermo con tratamiento antif˙ngico
+        // Enfermo con s√≠ntomas -> Enfermo con tratamiento antif√∫ngico
             prob_tratamiento = rand() % 100;
             if (prob_tratamiento <= 85){
                 c.estado = AZUL;
             }
     }
     else if ((c).estado == AZUL){
-        // Enfermo con tratamiento antif˙ngico -> Recuperado/Podado/Reemplazado:
+        // Enfermo con tratamiento antif√∫ngico -> Recuperado/Podado/Reemplazado:
         if ((c).timer == 9){    //pasan 8 semanas desde el contagio
             resistencia = EvaluarResistencia(c);
             if(c.edad<157){
@@ -230,7 +231,7 @@ void Calcular_Proximo_Estado(Celda *tablero, Celda *guardo_resultado, Celda c, C
                     c.timer = 0;
                 }
                 else{
-                    c.estado = VERDE;   //reemplazo por joven sano de un aÒo
+                    c.estado = VERDE;   //reemplazo por joven sano de un a√±o
                     c.edad = 52;
                     c.timer = 0;
                 }
@@ -323,7 +324,7 @@ int main(int argc, char **argv){
     MPI_Init(&argc, &argv);
     MPI_Status status;
 
-    //obtengo el tamaÒo de procesos
+    //obtengo el tama√±o de procesos
     int world_size;
     MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 
@@ -479,7 +480,7 @@ int main(int argc, char **argv){
         }
         if (world_rank == 0){
             //tv_sec -> numero entero de segundos en el intervalo
-            //tv_usec -> fracciÛn adicional como microsegundos
+            //tv_usec -> fracci√≥n adicional como microsegundos
             gettimeofday(&tiempo_final, NULL);
             tiempo = (tiempo_final.tv_sec - tiempo_inicial.tv_sec) * 1000.0 + (tiempo_final.tv_usec - tiempo_inicial.tv_usec) / 1000.0;
             printf("Tiempo vuelta: %g milisegundos\n\n", tiempo);

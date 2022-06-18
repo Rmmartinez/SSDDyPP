@@ -6,12 +6,12 @@
 #include <stddef.h>
 
 //dimension de la matriz
-#define FILAS 50      //1500, 5000 y 7500 funciona hasta 6600
-#define COLUMNAS 50   //1500, 5000 y 7500
-#define VUELTAS 1
+#define FILAS 1500      //1500, 5000 y 7500 funciona hasta 6600
+#define COLUMNAS 1500   //1500, 5000 y 7500
+#define VUELTAS 5
 
 //simulacion
-#define SEMANAS 50     //240, 1200 y 4320
+#define SEMANAS 240     //240, 1200 y 4320
 
 //imprimo los colores para mostrarlos
 void mostrarColores(Celda c){

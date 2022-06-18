@@ -6,8 +6,8 @@
 #include <stddef.h>
 
 //dimension de la matriz
-#define FILAS 1500      //1500, 5000 y 7500 funciona hasta 6600
-#define COLUMNAS 1500   //1500, 5000 y 7500
+#define FILAS 1200      //1500, 5000 y 7500 funciona hasta 6600
+#define COLUMNAS 1200   //1500, 5000 y 7500
 #define VUELTAS 5
 
 //simulacion

@@ -349,7 +349,9 @@ int main(){
     }
     tiempo_promedio = tiempo_total / VUELTAS;
 
-    printf("\n---------------------------------------------------- \n");
+    printf("\n\n--------------- INFORME DE SIMULACION ---------------\n");
+    printf("\n -Dimension de matriz: %d x %d\n", FILAS, COLUMNAS);
+    printf(" -Total de semanas: %d\n", SEMANAS);
     printf(" -Tiempo promedio en %d corridas: %g milisegundos \n", VUELTAS,tiempo_promedio);
     printf("\n---------------------------------------------------- \n");
 

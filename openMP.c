@@ -319,7 +319,7 @@ int main(){
             tablero_auxiliar = temp;
 
             //valores de la matriz
-
+            /*
              printf("\n TABLERO SEMANA: %d\n", i+1);
              printf("-------------------\n");
              for(int i = 2; i < frontera_filas-2; i++){
@@ -335,6 +335,7 @@ int main(){
                  }
                  printf("\n");
              }
+             */
         }
         gettimeofday(&tiempo_final, NULL);
         //tv_sec -> numero entero de segundos en el intervalo

@@ -5,9 +5,9 @@
 #include <omp.h>
 
 //dimension de la matriz
-#define FILAS 1500
-#define COLUMNAS 1500
-#define VUELTAS 1
+#define FILAS 1200
+#define COLUMNAS 1200
+#define VUELTAS 5
 
 //simulacion
 #define SEMANAS 240

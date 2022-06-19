@@ -350,7 +350,7 @@ int main(){
     tiempo_promedio = tiempo_total / VUELTAS;
 
     printf("\n---------------------------------------------------- \n");
-    printf("\nTiempo promedio en 10 corridas: %g milisegundos \n", tiempo_promedio);
+    printf(" -Tiempo promedio en %d corridas: %g milisegundos \n", VUELTAS,tiempo_promedio);
     printf("\n---------------------------------------------------- \n");
 
     return 0;

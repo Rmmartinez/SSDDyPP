@@ -9,7 +9,7 @@
 #define VUELTAS 5
 
 //simulacion
-#define SEMANAS 240   //240, 1200 y 4320
+#define SEMANAS 1200   //240, 1200 y 4320
 //imprimo los colores para mostrarlos
 void mostrarColores(Celda c){
     if (c.estado == BLANCO){     //podado

@@ -7,12 +7,12 @@
 #include <omp.h>
 
 //dimension de la matriz
-#define FILAS 1200      //1500, 5000 y 7500 funciona hasta 6600
-#define COLUMNAS 1200   //1500, 5000 y 7500
+#define FILAS 1500      //1500, 5000 y 7500 funciona hasta 6600
+#define COLUMNAS 1500   //1500, 5000 y 7500
 #define VUELTAS 5
 
 //simulacion
-#define SEMANAS 240     //240, 1200 y 4320
+#define SEMANAS 1200     //240, 1200 y 4320
 
 //imprimo los colores para mostrarlos
 void mostrarColores(Celda c){

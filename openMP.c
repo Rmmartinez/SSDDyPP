@@ -10,7 +10,7 @@
 #define VUELTAS 5
 
 //simulacion
-#define SEMANAS 1200
+#define SEMANAS 4320
 
 //imprimo los colores para mostrarlos
 void mostrarColores(Celda c){

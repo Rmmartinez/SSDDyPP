@@ -306,7 +306,7 @@ int main(){
         printf(" VUELTA: %d\n", cuentoVueltas);
         for(int i = 0; i < SEMANAS; i++){
             //actualizo proximos estados de la matriz
-            #pragma omp parallel for private(i) collapse(2) num_threads(16)
+            #pragma omp parallel for private(i) collapse(2) num_threads(8)
             for (int i = 2; i < frontera_filas - 2; i++){
                 for (int j = 2; j < frontera_columnas - 2; j++){
                     Calcular_Proximo_Estado(tablero, tablero_auxiliar, tablero[i][j], frontera_filas, frontera_columnas);

@@ -5,9 +5,9 @@
 #include <mpi.h>
 #include <math.h>
 
-#define N 800
+#define N 1500
 #define CICLOS 5
-#define SEMANAS 2000
+#define SEMANAS 1200
 
 #define BLANCO 0
 #define AZUL 1

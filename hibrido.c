@@ -6,9 +6,9 @@
 #include <math.h>
 #include <omp.h>
 
-#define N 1500
+#define N 2000
 #define CICLOS 5
-#define SEMANAS 2000
+#define SEMANAS 240
 
 #define BLANCO 0
 #define AZUL 1
